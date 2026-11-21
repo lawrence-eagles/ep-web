@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 import vinext from "vinext";
 import { cloudflare } from "@cloudflare/vite-plugin";
-import { responseStoreServiceBinding } from "./cloudflare.config";
+import { responseStoreServiceBinding } from "./cloudflare.config.ts";
 import { responseStoreAdapter } from "@vinext/cloudflare/cache/response-store-adapter";
 import { imagesOptimizer } from "@vinext/cloudflare/images/images-optimizer";
 
@@ -19,4 +19,8 @@ export default defineConfig({
       },
     }),
   ],
+  // Optimize dependencies to exclude lucide-react from pre-bundling
+  optimizeDeps: {
+    exclude: ["lucide-react"],
+  },
 });

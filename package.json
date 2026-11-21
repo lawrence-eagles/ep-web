@@ -6,6 +6,7 @@
   "dependencies": {
     "@cloudflare/workers-response-store": "^1.2.0",
     "@vinext/cloudflare": "^1.4.0",
+    "lucide-react": "^1.77.0",
     "react": "latest",
     "react-dom": "latest",
     "react-server-dom-webpack": "^19.3.1",

@@ -1,0 +1,20 @@
+/eaglespress-homepage-hero.png
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/eaglespress-web-logo.png
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/about-us-hero.png
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/our-team.png
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/apple-store-button.png
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/google-play-button.png
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/home-cards/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
