@@ -10,6 +10,12 @@ This project was created with create-vinext-app.
 - `pnpm run deploy` deploys the Cloudflare Worker.
 
 <!--
+5. Build unsubscribe functionality from the beginning.
+
+This is important for responsible email marketing and compliance. Make your privacy policy explain what information you collect, why you collect it, and how subscribers can withdraw consent.
+ -->
+
+<!--
 in the image i uploaded, upscale the commuters and on-the-go readers image. make it a transparent background.
  -->
 
