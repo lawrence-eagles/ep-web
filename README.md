@@ -38,5 +38,5 @@ Import it like this and use it: import Header from "@/components/Header";
 11. I have created the Footer component already. Below is the footer component:
 
 Import it like this and use it: import Footer from "@/components/Footer";
-12. The page should be responsive
+12. Make this page should be responsive
   -->
