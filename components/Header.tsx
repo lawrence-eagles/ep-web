@@ -1,7 +1,6 @@
-
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -10,6 +9,12 @@ const Header = () => {
   const pathname = usePathname();
   const [hash, setHash] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Reference to the mobile menu toggle button.
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+
+  // Reference to the mobile navigation container.
+  const mobileNavigationRef = useRef<HTMLDivElement>(null);
 
   // Track the current URL hash for anchor navigation.
   useEffect(() => {
@@ -39,6 +44,11 @@ const Header = () => {
 
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
+        // Only restore focus if focus is currently inside mobile navigation.
+        if (mobileNavigationRef.current?.contains(document.activeElement)) {
+          menuButtonRef.current?.focus();
+        }
+
         setIsMenuOpen(false);
       }
     };
@@ -153,8 +163,11 @@ const Header = () => {
 
         {/* Mobile Menu Button */}
         <button
+          ref={menuButtonRef}
           type="button"
-          aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-label={
+            isMenuOpen ? "Close navigation menu" : "Open navigation menu"
+          }
           aria-expanded={isMenuOpen}
           aria-controls="mobile-navigation"
           onClick={() => setIsMenuOpen((prev) => !prev)}
@@ -201,6 +214,7 @@ const Header = () => {
 
       {/* Mobile Navigation */}
       <div
+        ref={mobileNavigationRef}
         id="mobile-navigation"
         className={`absolute left-0 top-full w-full border-b border-slate-100 bg-white shadow-lg transition-all duration-200 ease-in-out sm:hidden ${
           isMenuOpen
